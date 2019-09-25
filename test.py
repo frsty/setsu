@@ -12,7 +12,8 @@ def Pausa():
     system("cls")
 
 def Sumar(a,b):
-    print("Tu suma hermano ",str(a+b))
+    resta = a-b
+    print(f"Tu suma hermano {resta}")
     
 def Restar(a,b):
     print("Tu resta hermano ",str(a-b))
