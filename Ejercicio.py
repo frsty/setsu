@@ -4,11 +4,27 @@
 #Comunas : concepcion, talcahuano, hualpen
 
 from os import system
+system("cls")
 
 nombres=[]
 rut=[]
 act=[]
 comuna=[]
+
+nombres.append("wladimir")
+rut.append("20194705-7")
+act.append("activo")
+comuna.append("concepcion")
+
+nombres.append("wacoldo")
+rut.append("40")
+act.append("activo")
+comuna.append("hualpen")
+
+nombres.append("soila")
+rut.append("41")
+act.append("activo")
+comuna.append("talcahuano")
 
 def Pausa():
     print("Apreta algo loko")
@@ -24,9 +40,38 @@ def Ingresar():
 
     
 def Modificar():
-    pass
+    r = str(input("ingrese el rut: "))
+    
+    for i in range(len(nombres)):
+        n = i+1
+        ru =str(f"{rut[i]}")
+        
+        if r == ru:
+            print(f"Persona {n}: {nombres[i]} {rut[i]} {act[i]} {comuna[i]}")
+            nombres[i]=input("ingrese nuevo nombre :")
+            act[i]=input("actividad nueva: ")
+            comuna[i]=input("nueva comuna : ")
+            print(f"""Los datos se an cambiado por:
+            {nombres[i]} {rut[i]} {act[i]} {comuna[i]}""")
+    
 def Eliminar():
-    pass
+    r = str(input("ingrese el rut: "))
+    
+    for i in range(len(nombres)):
+        n = i+1
+        ru =str(f"{rut[i]}")
+        
+        if r == ru:
+            print(f"""Los datos que se borraran:
+            {nombres[i]} {rut[i]} {act[i]} {comuna[i]}""")
+            input()
+            nombres.pop(i)
+            rut.pop(i)
+            comuna.pop(i)
+            act.pop(i)
+            print("Datos borrados")
+            
+    
 def Buscar():
     r = str(input("ingrese el rut: "))
     
@@ -35,16 +80,31 @@ def Buscar():
         ru =str(f"{rut[i]}")
         
         if r == ru:
-             print(f"Persona {n}: {nombres[i]} {rut[i]} {act[i]} {comuna[i]}")
-        else:
-            print("No existe esa persona :C") 
+            print(f"Persona {n}: {nombres[i]} {rut[i]} {act[i]} {comuna[i]}")
+        
            
     
     
 def ContarInac():
-    pass
+    for i in range(len(rut)):
+        ac=str(f"{act[i]}")
+        if ac=="inactivo":
+            n=i+1
+        else:
+            n=0
+        print(f"Total de personas inactivas: {n}")
 def ContarComun():
-    pass
+        
+  
+    for i in range(len(rut)):
+        co=str(f"{comuna[i]}")
+        if co=="concepcion" or co=="hualpen" or co=="talcahuano": 
+                n=i+1
+        else:
+            n=0
+    print(f"""El total de personas dentro de las comunas de
+            (concepcion,talcahuano y hualpen : {n})""")        
+        
 
 
 def Menu():
