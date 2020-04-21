@@ -6,7 +6,7 @@ apellidos=[]
 
 nombres.append("wacoldo")
 nombres.append("diogenes")
-nombres.append("amada")
+nombres.append("Amada")
 
 apellidos.append("soto")
 apellidos.append("carrasco")
